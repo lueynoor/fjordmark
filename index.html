@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fjordmark · Waar het pad stil wordt</title>
+<meta name="description" content="Fjordmark: een nieuw parfum voor buitenmensen en wandelaars. Mos, mist en natte steen. Schrijf je in voor een gratis proefstaal.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mosgoud:#998648;      /* hoofdkleur hsl(46,36%,44%) */
+  --mosgoud-licht:#B8A666;
+  --dennennacht:#1E2620;
+  --nacht:#121917;
+  --mos:#4E5A3C;
+  --turf:#5B4733;
+  --mist:#ECE8DE;
+  --mist-dim:#B9B6AC;
+  --serif:"Newsreader",Georgia,serif;
+  --sans:"Bricolage Grotesque",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--nacht);color:var(--mist);font-family:var(--serif);font-size:1.15rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:var(--sans);font-weight:800;line-height:1.02;letter-spacing:-.02em}
+h1 em,h2 em{font-style:normal;color:var(--mosgoud-licht)}
+.eyebrow{font-family:var(--sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mosgoud-licht);font-weight:600}
+.btn{display:inline-block;font-family:var(--sans);font-weight:600;font-size:1rem;text-decoration:none;background:var(--mosgoud);color:var(--nacht);padding:.95em 1.6em;border-radius:2px;border:0;cursor:pointer;transition:background .2s}
+.btn:hover,.btn:focus-visible{background:var(--mosgoud-licht)}
+.btn:focus-visible,input:focus-visible{outline:2px solid var(--mist);outline-offset:3px}
+.contour{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'%3E%3Cg fill='none' stroke='%23998648' stroke-opacity='.13' stroke-width='1'%3E%3Cpath d='M0 60 Q150 20 300 70 T600 50'/%3E%3Cpath d='M0 100 Q150 60 300 110 T600 90'/%3E%3Cpath d='M0 140 Q150 100 300 150 T600 130'/%3E%3Cpath d='M0 180 Q150 140 300 190 T600 170'/%3E%3Cpath d='M0 220 Q150 180 300 230 T600 210'/%3E%3Cpath d='M0 260 Q150 220 300 270 T600 250'/%3E%3C/g%3E%3C/svg%3E")}
+
+/* nav */
+.nav{position:absolute;inset:0 0 auto;z-index:5;padding:20px 0}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center}
+.nav img{width:120px}
+.nav a.link{font-family:var(--sans);font-size:.9rem;text-decoration:none;border-bottom:1px solid var(--mosgoud);padding-bottom:2px}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 72%}
+@media (min-width:861px){
+  .hero img.bg{left:auto;width:56%;object-position:50% 78%}
+  .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--nacht) 44%,rgba(18,25,23,.0) 62%)}
+  .hero .inner{padding-bottom:16vh}
+}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,25,23,.55) 0%,rgba(18,25,23,0) 30%,rgba(18,25,23,.15) 55%,rgba(18,25,23,.95) 100%)}
+.hero .inner{position:relative;z-index:2;padding:0 0 9vh}
+.hero h1{font-size:clamp(3rem,9vw,7.2rem);margin:.25em 0 .3em;max-width:10ch}
+.hero p.lead{font-size:clamp(1.15rem,2vw,1.4rem);font-style:italic;max-width:32ch;color:var(--mist);margin-bottom:1.6em}
+
+/* verhaal */
+section{padding:clamp(72px,12vw,140px) 0}
+.verhaal .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,90px);align-items:center}
+.verhaal h2{font-size:clamp(2.2rem,5vw,3.8rem);margin:.4em 0 .6em}
+.verhaal p+p{margin-top:1em}
+.verhaal p{color:var(--mist-dim);max-width:52ch}
+.verhaal p strong{color:var(--mist);font-weight:400;font-style:italic}
+.verhaal figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+figcaption{font-family:var(--sans);font-size:.75rem;color:var(--mist-dim);margin-top:.6em;letter-spacing:.04em}
+.waarden{display:flex;gap:28px;margin-top:2em;font-family:var(--sans);font-size:.9rem;flex-wrap:wrap}
+.waarden span{border-top:1px solid var(--mosgoud);padding-top:.5em;min-width:90px}
+
+/* geuren */
+.geuren{background:var(--dennennacht)}
+.geuren header{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.geuren h2{font-size:clamp(2.2rem,5vw,3.8rem);margin-top:.4em}
+.geuren header p{max-width:34ch;color:var(--mist-dim);font-style:italic}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--nacht);border:1px solid rgba(153,134,72,.25)}
+.card img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.card .txt{padding:22px 22px 26px}
+.card .moment{font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mosgoud-licht)}
+.card h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:2.2rem;letter-spacing:0;margin:.15em 0 .25em}
+.card p{color:var(--mist-dim);font-size:1.02rem}
+
+/* film */
+.film .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px);align-items:center}
+.film video,.film .poster{width:100%;aspect-ratio:9/16;object-fit:cover;max-height:80vh;background:var(--dennennacht)}
+.film h2{font-size:clamp(2.2rem,5vw,3.8rem);margin:.4em 0 .6em}
+.film p{color:var(--mist-dim);max-width:44ch}
+
+/* cta / formulier */
+.cta{position:relative;overflow:hidden}
+.cta .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}
+.cta::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--nacht) 30%,rgba(18,25,23,.6))}
+.cta .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px);align-items:center}
+.cta h2{font-size:clamp(2.4rem,5.5vw,4.2rem);margin:.4em 0 .5em}
+.cta p.intro{color:var(--mist-dim);max-width:40ch}
+.formbox{background:rgba(30,38,32,.92);border:1px solid rgba(153,134,72,.35);padding:clamp(24px,4vw,40px)}
+.formbox label{display:block;font-family:var(--sans);font-size:.85rem;font-weight:600;margin-bottom:.4em}
+.formbox input[type=text],.formbox input[type=email]{width:100%;font:inherit;font-size:1rem;padding:.8em .9em;background:var(--nacht);color:var(--mist);border:1px solid #4a5248;border-radius:2px;margin-bottom:1.1em}
+.formbox .optin{display:flex;gap:.7em;align-items:flex-start;font-size:.95rem;color:var(--mist-dim);margin-bottom:1.3em}
+.formbox .optin input{margin-top:.35em;accent-color:var(--mosgoud);width:18px;height:18px;flex:none}
+.formbox .btn{width:100%}
+.formbox small{display:block;font-size:.82rem;color:var(--mist-dim);margin-top:1.1em;line-height:1.5}
+.formbox .ok{display:none;font-style:italic;font-size:1.2rem}
+.formbox.done form{display:none}.formbox.done .ok{display:block}
+
+footer{padding:48px 0;border-top:1px solid rgba(153,134,72,.25);font-family:var(--sans);font-size:.85rem;color:var(--mist-dim)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer img{width:90px}
+
+@media (max-width:860px){
+  .hero{display:block;min-height:0}
+  .hero img.bg{position:relative;height:78svh;object-position:50% 88%}
+  .hero::after{background:linear-gradient(180deg,rgba(18,25,23,.55) 0%,rgba(18,25,23,0) 20%,rgba(18,25,23,0) 60%,var(--nacht) 78svh)}
+  .hero .inner{margin-top:-14svh;padding-bottom:40px}
+  .verhaal .grid,.film .wrap,.cta .wrap{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .film video,.film .poster{max-height:70vh}
+  .cta::before{background:rgba(18,25,23,.82)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Hoofdnavigatie">
+  <div class="wrap">
+    <img src="assets/img/fjordmark_logo.png" alt="Fjordmark – est. 2026 – Eau de parfum">
+    <a class="link" href="#inschrijven">Gratis proefstaal</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="assets/img/fjordmark_hero_fjordpad.jpg" alt="Een fles Fjordmark op een rots langs een mistig wandelpad, met watervallen in de fjord erachter">
+  <div class="wrap inner">
+    <span class="eyebrow">Eau de parfum · Nieuw</span>
+    <h1>Waar het pad <em>stil wordt.</em></h1>
+    <p class="lead">Mos, mist en natte steen. Een parfum voor wie buiten op adem komt.</p>
+    <a class="btn" href="#inschrijven">Vraag je proefstaal aan</a>
+  </div>
+</header>
+
+<section class="verhaal contour" id="verhaal">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">Het verhaal</span>
+      <h2>Gemaakt <em>voor buiten.</em></h2>
+      <p>Fjordmark begon op een smal pad langs een Noorse fjord. Na een regenbui rook alles anders: <strong>het mos op de rotsen, de natte steen, het hout van een oude wegwijzer.</strong> Die geur wilden we meenemen naar huis.</p>
+      <p>Geen glitter, geen zware avondgeur. Fjordmark is robuust en aards, en vooral kalm. Een parfum voor wandelaars en buitenmensen, voor de momenten waarop je alleen je eigen stappen nog hoort.</p>
+      <div class="waarden"><span>Robuust</span><span>Aards</span><span>Kalm</span></div>
+    </div>
+    <figure>
+      <img src="assets/img/fjordmark_fjordpad_mist.jpg" alt="Wandelpad door de heuvels naar een fjordwand met watervallen in de mist" loading="lazy">
+      <figcaption>Het pad naar de fjord, in de ochtendmist.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="geuren" id="geuren">
+  <div class="wrap">
+    <header>
+      <div>
+        <span class="eyebrow">De reeks</span>
+        <h2>Drie geuren, <em>één pad.</em></h2>
+      </div>
+      <p>Elke geur hoort bij een ander moment van de tocht. Welke past bij jou?</p>
+    </header>
+    <div class="cards">
+      <article class="card">
+        <img src="assets/img/fjordmark_fles_sage.jpg" alt="Fjordmark Sage, lichtgroene parfum in een glazen fles" loading="lazy">
+        <div class="txt"><span class="moment">De ochtend</span><h3>Sage</h3><p>Mos, varen en natte steen. Koel, groen en helder, zoals het bos na de eerste regen.</p></div>
+      </article>
+      <article class="card">
+        <img src="assets/img/fjordmark_fles_amber.jpg" alt="Fjordmark Amber, amberkleurige parfum in een glazen fles" loading="lazy">
+        <div class="txt"><span class="moment">De hut</span><h3>Amber</h3><p>Hars, dennenschors en warm hout. De geur van het einde van een lange tocht.</p></div>
+      </article>
+      <article class="card">
+        <img src="assets/img/fjordmark_fles_noir.jpg" alt="Fjordmark Noir, donkere parfum in een glazen fles" loading="lazy">
+        <div class="txt"><span class="moment">De nacht</span><h3>Noir</h3><p>Leisteen, ceder en een spoor van rook. Diep en kalm, zoals de fjord als het donker wordt.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="film" id="film">
+  <div class="wrap">
+    <!-- FILM: vervang de poster door de Firefly-video zodra die klaar is -->
+    <video class="poster" src="assets/video/fjordmark_film.mp4" poster="assets/img/fjordmark_amber_ovaal.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Korte film: mist trekt over de fjord, daarna verschijnt een fles Fjordmark"></video>
+    <div>
+      <span class="eyebrow">Fjordmark in beweging</span>
+      <h2>Ruik <em>de fjord.</em></h2>
+      <p>Mist die langs de rotswand trekt, water dat valt, een pad dat verdwijnt in het groen. Dit is waar Fjordmark vandaan komt.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta contour" id="inschrijven">
+  <img class="bgimg" src="assets/img/fjordmark_hero_fjordpad.jpg" alt="" loading="lazy">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Gratis proefstaal</span>
+      <h2>Kies je <em>pad.</em></h2>
+      <p class="intro">Schrijf je in en ontvang als eerste een proefstaal van Sage, Amber of Noir. Je krijgt hooguit een paar mails, en je schrijft je met één klik weer uit.</p>
+    </div>
+    <div class="formbox" id="formbox">
+      <!-- MAILERLITE: embedded formulier (action wordt ingevuld met de MailerLite-formulier-URL) -->
+      <form id="ml-form" action="MAILERLITE_ACTION" method="post">
+        <label for="f-naam">Voornaam</label>
+        <input id="f-naam" type="text" name="fields[name]" autocomplete="given-name" required>
+        <label for="f-email">E-mailadres</label>
+        <input id="f-email" type="email" name="fields[email]" autocomplete="email" required>
+        <label class="optin"><input type="checkbox" name="gdpr[]" value="Fjordmark e-mails" required><span>Ja, ik wil e-mails van Fjordmark ontvangen over de lancering en mijn proefstaal.</span></label>
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+        <button class="btn" type="submit">Schrijf je in</button>
+        <small>We gebruiken je naam en e-mailadres alleen om je de Fjordmark-mails te sturen. We delen ze met niemand en je kunt je altijd uitschrijven. Fjordmark is een fictief merk voor een schoolopdracht: gebruik enkel fictieve gegevens.</small>
+      </form>
+      <p class="ok">Dank je. Kijk in je mailbox: je eerste mail van het pad is onderweg.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/img/fjordmark_logo.png" alt="Fjordmark">
+    <span>Fjordmark is een fictief merk · Creative Automation, Artevelde 2026 · Made by LueyNoor</span>
+  </div>
+</footer>
+
+<script>
+// Verstuurt het formulier naar MailerLite zonder de pagina te verlaten.
+const form=document.getElementById('ml-form');
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(form.action.includes('MAILERLITE_ACTION')){document.getElementById('formbox').classList.add('done');return;}
+  try{await fetch(form.action,{method:'POST',body:new FormData(form),mode:'no-cors'});}catch(err){}
+  document.getElementById('formbox').classList.add('done');
+});
+</script>
+</body>
+</html>
