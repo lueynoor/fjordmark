@@ -203,12 +203,12 @@ footer img{width:90px}
     </div>
     <div class="formbox" id="formbox">
       <!-- MAILERLITE: embedded formulier (action wordt ingevuld met de MailerLite-formulier-URL) -->
-      <form id="ml-form" action="MAILERLITE_ACTION" method="post">
+      <form id="ml-form" action="https://assets.mailerlite.com/jsonp/2735580/forms/203674686022747271/subscribe" method="post">
         <label for="f-naam">Voornaam</label>
         <input id="f-naam" type="text" name="fields[name]" autocomplete="given-name" required>
         <label for="f-email">E-mailadres</label>
         <input id="f-email" type="email" name="fields[email]" autocomplete="email" required>
-        <label class="optin"><input type="checkbox" name="gdpr[]" value="Fjordmark e-mails" required><span>Ja, ik wil e-mails van Fjordmark ontvangen over de lancering en mijn proefstaal.</span></label>
+        <label class="optin"><input type="checkbox" name="gdpr[]" value="Ja, ik wil e-mails van Fjordmark ontvangen" required><span>Ja, ik wil e-mails van Fjordmark ontvangen over de lancering en mijn proefstaal.</span></label>
         <input type="hidden" name="ml-submit" value="1">
         <input type="hidden" name="anticsrf" value="true">
         <button class="btn" type="submit">Schrijf je in</button>
@@ -231,8 +231,7 @@ footer img{width:90px}
 const form=document.getElementById('ml-form');
 form.addEventListener('submit',async e=>{
   e.preventDefault();
-  if(form.action.includes('MAILERLITE_ACTION')){document.getElementById('formbox').classList.add('done');return;}
-  try{await fetch(form.action,{method:'POST',body:new FormData(form),mode:'no-cors'});}catch(err){}
+    try{await fetch(form.action,{method:'POST',body:new FormData(form),mode:'no-cors'});}catch(err){}
   document.getElementById('formbox').classList.add('done');
 });
 </script>
